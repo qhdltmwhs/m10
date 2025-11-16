@@ -12,6 +12,13 @@ declare global {
       resourceId?: string | null;
       file?: Multer.File;
     }
+
+    namespace Multer {
+      interface File {
+        location?: string; // S3 URL
+        key?: string; // S3 key
+      }
+    }
   }
 }
 

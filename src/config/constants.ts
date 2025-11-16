@@ -23,6 +23,16 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'default_session_secret';
 const UPLOAD_PATH = process.env.UPLOAD_PATH || './uploads';
 const MAX_FILE_SIZE = process.env.MAX_FILE_SIZE ? parseInt(process.env.MAX_FILE_SIZE, 10) : 5 * 1024 * 1024; // 5MB
 
+// AWS S3
+const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+const AWS_REGION = process.env.AWS_REGION || 'ap-northeast-2';
+const AWS_S3_BUCKET = process.env.AWS_S3_BUCKET;
+const AWS_S3_BASE_URL = process.env.AWS_S3_BASE_URL;
+
+// Environment
+const IS_PRODUCTION = NODE_ENV === 'production';
+
 export {
     NODE_ENV,
     PORT,
@@ -37,4 +47,10 @@ export {
     SESSION_SECRET,
     UPLOAD_PATH,
     MAX_FILE_SIZE,
+    AWS_ACCESS_KEY_ID,
+    AWS_SECRET_ACCESS_KEY,
+    AWS_REGION,
+    AWS_S3_BUCKET,
+    AWS_S3_BASE_URL,
+    IS_PRODUCTION,
 };
